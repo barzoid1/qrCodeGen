@@ -49,6 +49,9 @@ margin: 2rem auto;
 form div{
   margin-bottom: 1.7rem;
 }
+  form input{
+    color:#000;
+  }
 form input:focus,
 form select:focus{
   outline: none;
