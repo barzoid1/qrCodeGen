@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600;700;900&display=swap" rel="stylesheet" />
+  
+<link rel="stylesheet" href="qrcodeGen.css">
+  <title>QR Code Generator</title>
+</head>
+<body> 
+  <h1>QR Code Generator</h1>
+  <p></p>
+  <div class="container dark">
+    <form id="generate">
+      <div><input type="url" id="url" placeholder="Enter a Url" ></div>
+      <div>
+        <select id="size">
+          <option value="100">100x100</option>
+          <option value="200" selected>200x200</option>
+          <option value="300">300x300</option>
+          <option value="400">400x400</option>
+        </select>
+      </div>
+        <div><button type="submit">Generate QRCode</button></div>
+     
+    </form>
+  </div>
+    <div id="qrcodeimg"></div>
+    <a href="" id="save-link"  class="btn">Save QRCode</a>
+  <script>   
+    const qri = document.getElementById("qrcodeimg")
+    const form = document.getElementById("generate")
+  const generateSubmit = (e) => {
+  e.preventDefault()
+    const url =document.getElementById('url').value
+    const size = document.getElementById("size").value
+    clearUI()
+    if (url === ''){
+      alert('enter a url')
+    }
+    else{     
+      showQRCode(url, size)
+      setTimeout(() => {
+        const saveUrl = qri.querySelector('img').src
+        saveQR(saveUrl)
+      },50)
+  }
+}
+  const showQRCode = (url, size) => {
+    const qrcode = new QRCode('qrcodeimg', {
+    text: url,
+    width: size,
+    height: size,
+ })
+  }
+  const saveQR = (saveUrl) => {
+  const link = document.getElementById('save-link')
+  link.download = 'qrcode'
+  link.href = saveUrl
+  
+  }
+    const clearUI = () =>{
+      qri.innerHTML = ''
+      // const link = document.getElementById('save-link')
+      // if(link) {savelink.remove()}
+    }
+        form.addEventListener('submit', generateSubmit)
+  </script>
+</body>
+</html>
