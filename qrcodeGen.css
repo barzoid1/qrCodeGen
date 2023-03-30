@@ -1,0 +1,81 @@
+@media screen and (max-width:445px){
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  font-family: "Poppins", sans-serif;
+  line-height: 1.55;
+  color:rgb(60, 58, 71);
+
+}
+
+h1{
+  margin: 0;
+  color:rgb(60, 58, 71);
+}
+a{
+  font-weight: 700;
+  text-decoration: none;
+}
+a:hover{
+  color: rgb(60, 58, 71);
+}
+.btn{
+color:white;
+  border: 1px solid rgb(159, 118, 87);
+  font-weight: 700;
+  background-color:rgb(171, 54, 54);
+}
+
+.container{
+  display:grid;
+  grid-template-rows: 1fr auto;
+  width: 100%;
+margin: 2rem auto 0 auto;
+
+}
+.contain{
+  display:grid;
+  grid-template-rows: 1fr 1fr;
+  width: 100%;
+margin: 2rem auto;
+
+}
+.dark{
+  background-color: rgb(253, 253, 254);
+}
+form div{
+  margin-bottom: 1.7rem;
+}
+form input:focus,
+form select:focus{
+  outline: none;
+  background-color: rgba(255, 255, 255,.2);
+}
+form input,
+form select {
+  background-color:  rgb(60, 58, 71);
+  border: none ;
+  padding: 1rem;
+  width: 100%;
+  color: white;
+  resize: none;
+}
+option{
+  color: black;
+  /* background-color:rgba(255, 255, 255, 0.166); */
+}
+button{
+    border: 1px solid rgb(255, 255, 255);
+    background-color:  rgb(60, 58, 71);;
+    color: rgb(255, 255, 255);
+    transition: none;
+    width:85%;
+    margin-left:2rem;
+    padding: 1rem 0;
+    cursor: pointer;
+    margin-bottom: 0;
+  }
+} 
