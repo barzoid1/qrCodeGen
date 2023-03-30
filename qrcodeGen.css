@@ -55,8 +55,9 @@ form div{
 form input:focus,
 form select:focus{
   outline: none;
-  background-color: rgba(255, 255, 255,.2);
+  color: #fff;
 }
+
 form input,
 form select {
   background-color:  rgb(60, 58, 71);
